@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: learningintergration-api
+    runtime: docker
+    dockerfilePath: ./Backend/src/Dockerfile
+    dockerContext: ./Backend/src
+    healthCheckPath: /api/Projects
+    envVars:
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production
+      - key: FrontendUrl
+        sync: false
+
+  
