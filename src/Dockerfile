@@ -1,10 +1,10 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
-COPY PortfolioBackend.csproj .
+COPY src/PortfolioBackend.csproj .
 RUN dotnet restore
 
-COPY . .
+COPY src/ .
 RUN dotnet publish PortfolioBackend.csproj -c Release -o /app/publish --no-restore
 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime

@@ -3,7 +3,7 @@ services:
     name: learningintergration-api
     runtime: docker
     dockerfilePath: ./src/Dockerfile
-    dockerContext: ./src
+    dockerContext: .
     healthCheckPath: /api/Projects
     envVars:
       - key: ASPNETCORE_ENVIRONMENT
